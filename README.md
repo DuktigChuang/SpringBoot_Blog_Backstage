@@ -6,8 +6,6 @@
 
 ![image-20210317191514135](https://gitee.com/flanderschuang/upic/raw/master/uPic/image-20210317191514135.png)
 
-![image-20210317191535541](/Users/flanderschuang/Library/Application Support/typora-user-images/image-20210317191535541.png)
-
 ![image-20210317191553470](https://gitee.com/flanderschuang/upic/raw/master/uPic/image-20210317191553470.png)
 
 ![image-20210317191623349](https://gitee.com/flanderschuang/upic/raw/master/uPic/image-20210317191623349.png)
