@@ -24,6 +24,7 @@ public interface AdminUserDao {
     // 新增用户记录
     int addUser(AdminUser user);
     // 批量新增用户记录
+    // 此处的 @Param 与上面不同，这里是对象参数，因为这里传入的对象不止一个，所以用对象参数代替。如果这里修改为 @Param("User") Mapper.xml 应该改写为 #{User.username},而不是 #{adminUser.userName}
     int insertUserBatch(@Param("adminUsers") List<AdminUser> adminUsers);
     // 修改密码
     int updateUserPassword(@Param("userId")Long userId,@Param("newPassword")String newPassword);
