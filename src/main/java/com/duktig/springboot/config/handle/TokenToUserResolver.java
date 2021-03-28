@@ -39,7 +39,7 @@ public class TokenToUserResolver implements HandlerMethodArgumentResolver {
 
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
         //获取登陆用户信息
-        if (parameter.getParameterAnnotation(TokenToUser.class) instanceof TokenToUser) {
+        if (parameter.getParameterAnnotation(TokenToUser.class) != null) {
             AdminUser adminUser = null;
             String token = webRequest.getHeader("token");
             if (null != token && !"".equals(token) && token.length() == 32) {
@@ -56,7 +56,7 @@ public class TokenToUserResolver implements HandlerMethodArgumentResolver {
         if (contentLength < 0) {
             return null;
         }
-        byte buffer[] = new byte[contentLength];
+        byte[] buffer = new byte[contentLength];
         for (int i = 0; i < contentLength; ) {
             int readLength = request.getInputStream().read(buffer, i,
                     contentLength - i);

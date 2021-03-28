@@ -12,7 +12,8 @@ public interface AdminUserDao {
     List<AdminUser> findAdminUsers(Map param);
     // 查询用户总数
     int getTotalAdminUser(Map param);
-    // 根据用户名和密码获取用户记录
+    // 根据用户名和密码获取用户记录,@Param 参数存在的意义是为了和 Mapper.xml 对应 #{username} #{passwordMD5}
+    // 直接不加 @Param 会出现异常，提示参数不对应，除了以上方法外，还能把 Mapper.xml 改写成 #{arg0} #{arg1} 或者 {param1} {param2}.但是因为两者下标的区别，所以不推荐使用这种方式
     AdminUser getAdminUserByUserNameAndPassword(@Param("userName") String userName, @Param("passwordMD5") String passwordMD5);
     // 根据 userToken 获取用户记录
     AdminUser getAdminUserByToken(String userToken);

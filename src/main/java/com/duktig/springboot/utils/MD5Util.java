@@ -10,10 +10,10 @@ import java.security.MessageDigest;
  */
 public class MD5Util {
 
-    private static String byteArrayToHexString(byte b[]) {
-        StringBuffer resultSb = new StringBuffer();
-        for (int i = 0; i < b.length; i++) {
-            resultSb.append(byteToHexString(b[i]));
+    private static String byteArrayToHexString(byte[] b) {
+        StringBuilder resultSb = new StringBuilder();
+        for (byte value : b) {
+            resultSb.append(byteToHexString(value));
         }
 
         return resultSb.toString();
@@ -41,7 +41,7 @@ public class MD5Util {
                 resultString = byteArrayToHexString(md.digest(resultString
                         .getBytes(charsetName)));
             }
-        } catch (Exception exception) {
+        } catch (Exception ignored) {
         }
         return resultString;
     }
